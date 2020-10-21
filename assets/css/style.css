@@ -575,7 +575,6 @@ header nav ul li a {
 .prices-container p {
     max-width: 525px;
     margin-top: 20px;
-
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 1.3px;
@@ -589,12 +588,26 @@ header nav ul li a {
     color: #3329ba;
 }
 
+.prices-slider-container{
+    display: flex;
+    align-items: center;
+}
+
 .prices-slider {
     width: calc(6 * 396px + 6 * 32px);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 190px;
+    margin-left: 0;
+}
+
+.prices-slider1{ 
+    transform: translateX(60%);
+}
+
+.prices-slider2{
+    transform: translateX(-40%);
 }
 
 .slide {

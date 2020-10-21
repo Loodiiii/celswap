@@ -53,7 +53,7 @@ const navMobile = document.querySelector('.nav-mobile-modal')
 const logoMobile = document.querySelector(".celswap-logo-mobile")
 
 
-burger.onclick = function() {
+burger.onclick = function () {
     header.classList.toggle("flex-end");
     navMobile.classList.toggle("nav-mobile-active");
     logoMobile.classList.toggle("hidden");
@@ -65,18 +65,49 @@ burger.onclick = function() {
 // Typography movement
 var _el = document.querySelector('.about-typography');
 let about = document.querySelector("#about");
-_el.addEventListener("mouseover", function() {
+_el.addEventListener("mouseover", function () {
 
     _el.style.top = "0";
     _el.style.left = "0";
-    about.addEventListener('mousemove', nutterbutter); 
-    function nutterbutter(event){ 
-        _el.style.top = event.clientY + "px"; 
-        _el.style.left = event.clientX + "px"; 
+    about.addEventListener('mousemove', nutterbutter);
+    function nutterbutter(event) {
+        _el.style.top = event.clientY + "px";
+        _el.style.left = event.clientX + "px";
     }
-
 })
+
 slider = document.querySelector(".prices-slider");
 slide = document.querySelectorAll(".slide");
 
 
+// Carousel slider prices
+
+const pricesSlider1 = document.querySelector(".prices-slider1");
+const pricesSlider2 = document.querySelector(".prices-slider2");
+
+function sliderFunction() {
+
+    pricesSlider1.animate([
+        // keyframes
+        { transform: 'translateX(60%)' },
+        { transform: 'translateX(-160%)' }
+    ], {
+        // timing options
+        duration: 20000,
+        iterations: Infinity
+    });
+
+    pricesSlider2.animate([
+        // keyframes
+        { transform: 'translateX(-40%)' },
+        { transform: 'translateX(-260%)' }
+    ], {
+        // timing options
+        duration: 20000,
+        iterations: Infinity,
+        delay: 10000
+    });
+
+}
+
+sliderFunction();
