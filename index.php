@@ -1,9 +1,9 @@
 <?php //include 'inc/class-autoload.inc.php';
-    $user = "root";
-    $pass = "";
-    $conn = new PDO("mysql:host=localhost;dbname=celswap;", $user, $pass);
+    // $user = "root";
+    // $pass = "";
+    // $conn = new PDO("mysql:host=localhost;dbname=celswap;", $user, $pass);
 
-    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    // $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,8 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/burger.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -159,41 +160,60 @@
         </div>
 
         <div class="prices-slider">
-            <div class="slide slide1">
-                <h3>Anyone can add <span>liquidity</span></h3>
 
-                <div class="icon1"></div>
-                <div class="circle"></div>
-            </div>
-            <div class="slide slide2">
-                <h3>Prices are determined by <span>smart contracts</span></h3>
+        </div>
+        <div class="splide splide-container splide-1">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="slide slide1">
+                            <h3>Anyone can add <span>liquidity</span></h3>
 
-                <div class="icon2"></div>
-                <div class="circle"></div>
-            </div>
-            <div class="slide slide3">
-                <h3>Connect your <span>wallet</span></h3>
+                            <div class="icon1"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="slide slide2">
+                            <h3>Prices are determined by <span>smart contracts</span></h3>
 
-                <div class="icon3"></div>
-                <div class="circle"></div>
-            </div>
-            <div class="slide slide4">
-                <h3>Swap coins <span>trustlessly</span></h3>
+                            <div class="icon2"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="slide slide3">
+                            <h3>Connect your <span>wallet</span></h3>
 
-                <div class="icon4"></div>
-                <div class="circle"></div>
-            </div>
-            <div class="slide slide5">
-                <h3>Get <span>rewarded</span> for providing liquidity</h3>
+                            <div class="icon3"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="slide slide4">
+                            <h3>Swap coins <span>trustlessly</span></h3>
 
-                <div class="icon5"></div>
-                <div class="circle"></div>
-            </div>
-            <div class="slide slide6">
-                <h3>Contribute to the <span>community</span></h3>
+                            <div class="icon4"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="slide slide5">
+                            <h3>Get <span>rewarded</span> for providing liquidity</h3>
 
-                <div class="icon6"></div>
-                <div class="circle"></div>
+                            <div class="icon5"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="slide slide6">
+                            <h3>Contribute to the <span>community</span></h3>
+
+                            <div class="icon6"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -345,11 +365,11 @@
                     <div class="voted">+1</div>
                     <div class="num-votes">
                         <?php 
-                              $sql = "SELECT vote_id FROM votes ORDER BY vote_id DESC";
-                              $stmt = $conn->prepare($sql);
-                              $stmt->execute();
-                              $result = $stmt->fetchAll();
-                              echo $result[0]['vote_id']; 
+                            //   $sql = "SELECT vote_id FROM votes ORDER BY vote_id DESC";
+                            //   $stmt = $conn->prepare($sql);
+                            //   $stmt->execute();
+                            //   $result = $stmt->fetchAll();
+                            //   echo $result[0]['vote_id']; 
                         ?>
                     </div>
                     <div class="vote-btn">
@@ -473,6 +493,8 @@
         </div>
     </div>
 
+
+    <script src="assets/js/splideSlider.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/testimonials-slider.js"></script>
 </body>
