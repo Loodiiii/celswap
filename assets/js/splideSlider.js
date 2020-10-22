@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
     const splide1 = new Splide('.splide-1', {
         perPage: 4,
         type: 'loop',
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //     }
     }).mount();
 
-    const splide2 = new Splide('.splide', {
+    const splide2 = new Splide('.splide-2', {
         perPage: 4,
         type: 'loop',
         focus: 'center',
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         easing: "linear",
         speed: 3000,
         pauseOnHover: false,
-        gap: "0em"//,
+        gap: "10em"//,
         // breakpoints: {
         //     1024: {
         //         gap: "5em"
