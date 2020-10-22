@@ -34,6 +34,11 @@
 }
 
 @font-face {
+    font-family: QuincyCF-Bold;
+    src: url(../fonts/QuincyCF-Bold.otf);
+}
+
+@font-face {
     font-family: QuincyCF-Medium;
     src: url(../fonts/QuincyCF-Medium.otf);
 }
@@ -76,12 +81,10 @@ h1 {
 }
 
 .hidden {
-    display: none !important;
+    opacity: 0 !important;
+    transition: 0 !important;
 }
 
-.flex-end {
-    justify-content: flex-end;
-}
 
 /* /universal classes */
 
@@ -97,7 +100,12 @@ header {
     z-index: 7;
 }
 
+.celswap-logo-mobile {
+    display: none;
+}
+
 .celswap-logo {
+    display: block;
     width: 202px;
     height: 78px;
     background: url('../images/celswap-logo.png');
@@ -108,17 +116,7 @@ header {
 }
 
 .celswap-logo-onscroll {
-    width: 143.3px;
-    height: 36px;
-
-    background: url('../images/celswap-logo-onscroll.svg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    transition: .5s;
-}
-
-.celswap-logo-mobile {
-    display: none;
+    display: block;
     width: 143.3px;
     height: 36px;
 
@@ -231,6 +229,7 @@ header nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 3;
 }
 
 #hero .heading-section h1 {
@@ -548,6 +547,7 @@ header nav ul li a {
     background: #fff;
     padding-top: 180px;
     padding-bottom: 133px; 
+    overflow: hidden;
 }
 
 .prices-container {
@@ -575,6 +575,7 @@ header nav ul li a {
 .prices-container p {
     max-width: 525px;
     margin-top: 20px;
+
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 1.3px;
@@ -588,26 +589,12 @@ header nav ul li a {
     color: #3329ba;
 }
 
-.prices-slider-container{
-    display: flex;
-    align-items: center;
-}
-
 .prices-slider {
     width: calc(6 * 396px + 6 * 32px);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 190px;
-    margin-left: 0;
-}
-
-.prices-slider1{ 
-    transform: translateX(60%);
-}
-
-.prices-slider2{
-    transform: translateX(-40%);
 }
 
 .slide {
@@ -763,7 +750,7 @@ header nav ul li a {
 }
 
 .upper-heading-box {
-    width: 507px;
+    max-width: 507px;
 }
 
 .upper-heading-box h1 {
@@ -805,7 +792,7 @@ header nav ul li a {
 }
 
 .down-heading-box {
-    width: 507px;
+    max-width: 507px;
     margin-top: 50px;
 }
 
@@ -937,7 +924,7 @@ header nav ul li a {
   transition: transform calc(var(--f, 1)*.5s) ease-out;
 }
 #testimonials .testimonial{
-  background: #ffffff url('https://mvpworkshop.co/wp-content/themes/MVPWorkshop/images/tokenization/testimonial-quotes.svg') no-repeat;
+  background: #ffffff;
   background-position: top 25px left 0px;
 
   float: left;
@@ -1028,6 +1015,7 @@ height: 550px !important;
   }
   #testimonials .testimonial.current {
     width: 15%;
+    height: 715px;
   }
 }
 /* TESTIMONIALS - Desktop */
@@ -1222,12 +1210,10 @@ background-size: 100% 100%;
     margin-top: 35px;
 }
 
-.form-vote {
-    width: 187px;
-    height: 187px;
-    border-radius: 50%;
-
-    margin-top: 100px;
+.vote-form button{
+   border: none;
+   background: transparent; 
+   outline: none;
 }
 
 .vote-btn {
@@ -1278,7 +1264,7 @@ background-size: 100% 100%;
     opacity: 0;
     position: absolute;
     right: -30px;
-    top: 93px;
+    top: -6px;
 
     z-index: 7;
     background: linear-gradient(45deg, #f76c1d 0%, #f7c664 100%);
@@ -1293,7 +1279,7 @@ background-size: 100% 100%;
     position: absolute;
     width: 67px;
     height: 66px;
-    top: 70px;
+    top: -30px;
     right: 0;
 
     z-index: 5;
@@ -1353,6 +1339,149 @@ background-size: 100% 100%;
     transition: .5s;
 }
 
+#rates {
+    width: 100vw;
+    padding-top: 160px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#rates h1 {
+    font-size: 61px;
+    text-align: center;
+
+    color: #0f1e6c;
+
+    background: linear-gradient(270deg, #3228b5 0%, #151a76 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#rates h1 span {
+    font-family: 'QuincyCF-Medium', sans-serif;
+    font-weight: 500;
+}
+
+.rates-slider {
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.rates-slider-container {
+    width: 2200px;
+    height: 250px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rates-slide {
+    width: 243px;
+    height: 193px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 100px;
+}
+
+.rates-slide-heading {
+    font-family: 'QuincyCF-Bold', sans-serif;
+    font-size: 39px;
+    color: #0f1e6c;
+    font-weight: 700;
+}
+
+.rates-value-cel {
+    margin-right: 40px;
+}
+
+.rates-value-cel-percentage {
+    font-family: 'Pangram-ExtraBold', sans-serif;
+    font-weight: 800;
+    font-size: 31px;
+    background: linear-gradient(45deg, #f76c1d 0%, #f7c664 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.in-cel {
+    font-family: 'Pangram-Bold', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FF9721;
+    margin-top: 5px;
+}
+
+.rates-value-in-kind-percentage {
+    font-family: 'Pangram-ExtraBold', sans-serif;
+    font-weight: 800;
+    font-size: 31px;
+    color: #0f1e6c;
+}
+
+.in-kind {
+    font-family: 'Pangram-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #0f1e6c;
+    margin-top: 5px;
+}
+
+.rates-slide-value {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.rates-value-cel,
+.rates-value-in-kind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 1440px) and (max-width: 1600px) {
+    header {
+        padding: 47px 280px 0 240px;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+    h1 {
+        font-size: 52px !important;
+    }
+    
+    header {
+        padding: 47px 180px 0 200px;
+    }
+
+    #hero .heading-section h1 {
+        font-size: 82px !important;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+    header {
+        padding: 47px 100px 0 100px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     #hamburger {
         display: block !important;
@@ -1367,8 +1496,25 @@ background-size: 100% 100%;
         display: none;
     }
 
+    .header-btn {
+        margin-left: 0;
+        width: auto;
+        height: auto;
+    }
+
+    .celswap-logo {
+        display: none !important;
+    }
+
     .celswap-logo-mobile {
-        display: block;
+        display: block !important;
+        width: 143.3px;
+        height: 36px;
+
+        background: url('../images/celswap-logo-onscroll.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        transition: .5s;
     }
 
     #hero {
@@ -1380,16 +1526,12 @@ background-size: 100% 100%;
         display: none;
     }
 
-    .celswap-logo-mobile {
-        display: block;
-    }
-
     .nav-mobile-modal {
         display: none;
         position: fixed;
         width: 100%;
         height: 100%;
-        background: #D79713;
+        background: #F7923B;
         z-index: 5;
     }
 
@@ -1425,7 +1567,7 @@ background-size: 100% 100%;
         letter-spacing: 0.05em;
         text-align: left;
         color: #fff;
-        background: #202832;
+        background: #0f1e6c;
         border: none;
         padding: 12px 23px;
         margin-top: 50px;
@@ -1433,17 +1575,193 @@ background-size: 100% 100%;
 }
 
 
+@media (min-width: 421px) and (max-width: 768px) {
+
+}
+
 @media (min-width: 350px) and (max-width: 420px) {
+
+    h1,
+    h1 span {
+        font-size: 36px !important;
+        line-height: 1.15;
+    }
+
+    h3 {
+        font-size: 24px !important;
+    }
 
     .btn {
         font-size: 17px;
     }
 
     #hero .heading-section h1 {
-        font-size: 40px;
+        font-size: 40px !important;
+    }
+
+    .bubble3 {
+        top: 432px;
+    }
+
+    #availability {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .available,
+    .coming-soon {
+        width: 100vw;
+        padding: 70px 30px 70px; 
+    }
+
+    .available h1 {
+        width: 100vw;
+    }
+
+    .coming-soon h1,
+    .coming-soon h4 {
+        width: 100vw;
+        text-align: center;
+    }
+
+    .coming-soon h4 {
+        margin-top: 70px;
+    }
+
+    #about {
+        padding: 70px 30px;
+    }
+
+    .about-typography {
+        font-size: 100px;
+        right: 0;
+        top: 80px;
+    }
+
+    #about h1 {
+        position: relative;
+        z-index: 3;
+    }
+
+    #about h3 {
+        margin-top: 25px;
+    }
+
+    #about h3 br {
+        display: none;
+    }
+
+    #about p {
+        margin-top: 40px;
+    }
+
+    #what-is {
+        padding: 70px 30px;
+    }
+
+    .what-is-content p {
+        font-size: 22px;
+    }
+
+    #prices {
+        padding: 70px 0;
+    }
+
+    .prices-container {
+        width: auto;
+        padding: 0 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prices-function {
+        margin-top: 30px;
+    }
+
+    .prices-function span {
+        font-size: 72px;
+    }
+
+    #why-build {
+        padding-top: 0;
+    }
+
+    .upper-container {
+        padding: 70px 0 0;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .upper-heading-box {
+        padding: 0 30px;
+    }
+
+    .upper-image-box {
+        width: 340px;
+        height: 340px;
+        margin-right: 0;
+        margin-top: 60px;
+    }
+
+    .down-container {
+        padding: 70px 0 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .down-heading-box {
+        padding: 0 30px;
+    }
+
+    .down-image-box {
+        width: 342px;
+        height: 342px;
+        margin-top: 60px;
+    }
+
+    .transition-circle {
+        bottom: -240px;
+        padding: 0 30px 70px;
+    }
+
+    .transition-circle h1 {
+        width: 100vw;
+    }
+
+    #testimonials .testimonial{
+        height: 580px;
+    }
+
+    #developers {
+        padding: 70px 30px;
+    }
+
+    .developers-typography {
+        font-size: 190px;
+    }
+
+    #developers .developers-links {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .btn-documentation {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    #vote {
+        padding: 70px 30px;
+    }
+
+    #vote h1 {
+        font-size: 40px !important;
     }
 }
 
-@media (min-width: 421px) and (max-width: 768px) {
-
+@media (min-width: 320px) and (max-width: 370px) {
+    #testimonials .testimonial {
+        height: 630px;
+    }
 }

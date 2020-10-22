@@ -50,13 +50,12 @@ voteBtn.addEventListener("click", function () {
 
 const burger = document.querySelector('.burger')
 const navMobile = document.querySelector('.nav-mobile-modal')
-const logoMobile = document.querySelector(".celswap-logo-mobile")
 
 
 burger.onclick = function () {
     header.classList.toggle("flex-end");
     navMobile.classList.toggle("nav-mobile-active");
-    logoMobile.classList.toggle("hidden");
+    celSwapLogo.classList.toggle("hidden");
     burger.classList.toggle("open");
 }
 
@@ -74,40 +73,24 @@ _el.addEventListener("mouseover", function () {
         _el.style.top = event.clientY + "px";
         _el.style.left = event.clientX + "px";
     }
-})
 
+})
 slider = document.querySelector(".prices-slider");
 slide = document.querySelectorAll(".slide");
 
 
-// Carousel slider prices
 
-const pricesSlider1 = document.querySelector(".prices-slider1");
-const pricesSlider2 = document.querySelector(".prices-slider2");
 
-function sliderFunction() {
-
-    pricesSlider1.animate([
-        // keyframes
-        { transform: 'translateX(60%)' },
-        { transform: 'translateX(-160%)' }
-    ], {
-        // timing options
-        duration: 20000,
-        iterations: Infinity
-    });
-
-    pricesSlider2.animate([
-        // keyframes
-        { transform: 'translateX(-40%)' },
-        { transform: 'translateX(-260%)' }
-    ], {
-        // timing options
-        duration: 20000,
-        iterations: Infinity,
-        delay: 10000
-    });
-
-}
-
-sliderFunction();
+// fetch("https://api.celsius.network/api/v3/web/supported_currencies?fbclid=IwAR3T4QbarmtKZIKLdmrlqmXAup2j6b6OlE9hOPv6dbZzRnFgwgRIRCQkMo0")
+//     .then(result => result.json()).then(data => {
+//         let output = '<h2>Rates</h2>';
+//         data.forEach(function (user) {
+//             output += `
+//                 <h5>${user.usd}</h5>
+//             `;
+//         });
+//         document.querySelector("#rates").innerHTML = output;
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
