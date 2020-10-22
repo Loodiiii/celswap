@@ -1,10 +1,10 @@
-<?php //include 'inc/class-autoload.inc.php';
-    // $user = "root";
-    // $pass = "";
-    // $conn = new PDO("mysql:host=localhost;dbname=celswap;", $user, $pass);
+<!-- <?php include 'inc/class-autoload.inc.php';
+    $user = "root";
+    $pass = "";
+    $conn = new PDO("mysql:host=localhost;dbname=celswap;", $user, $pass);
 
-    // $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-?>
+    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -159,9 +159,6 @@
             </div>
         </div>
 
-        <div class="prices-slider">
-
-        </div>
         <div class="splide splide-container splide-1">
             <div class="splide__track">
                 <ul class="splide__list">
@@ -364,13 +361,13 @@
                 <div class="votes">
                     <div class="voted">+1</div>
                     <div class="num-votes">
-                        <?php 
-                            //   $sql = "SELECT vote_id FROM votes ORDER BY vote_id DESC";
-                            //   $stmt = $conn->prepare($sql);
-                            //   $stmt->execute();
-                            //   $result = $stmt->fetchAll();
-                            //   echo $result[0]['vote_id']; 
-                        ?>
+                        <!-- <?php 
+                            $sql = "SELECT vote_id FROM votes ORDER BY vote_id DESC";
+                            $stmt = $conn->prepare($sql);
+                            $stmt->execute();
+                            $result = $stmt->fetchAll();
+                            echo $result[0]['vote_id']; 
+                        ?> -->
                     </div>
                     <div class="vote-btn">
                         <h3>hell yeah!</h3>
@@ -380,12 +377,14 @@
             </button>
         </form>
     </div>
-    
+
     <div id="rates">
         <h1>Download Celsius app
             <br>
             <span>to earn the best reward rates!</span>
         </h1>
+
+
         <div class="rates-slider">
             <div class="rates-slider-container">
                 <div class="rates-slide">
@@ -491,6 +490,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">Slide 01</li>
+                    <li class="splide__slide">Slide 02</li>
+                    <li class="splide__slide">Slide 03</li>
+                </ul>
+            </div>
+        </div>
+
+
     </div>
 
 
